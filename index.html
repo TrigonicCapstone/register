@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+       
+        <meta charset="utf-8">
+        <title>Trigonic</title>
+        <meta name="description" content="High-end fashion marketplace" />
+        <meta name="keywords" content="Shoes, Sneakers, classic, trendy, legit" />
+        <meta name="author" content="Trigonic" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <link rel="shortcut icon" href="images/logo.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></script>
+      
+
+    </head>
+
+    <body>
+
+		
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>Register a new  <strong>Trigonic</strong> Service</h1>
+                        <div class="description">
+                       	    <p>
+                                Register to receive the best Service from Trigonic
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box" >
+                    	<form role="form" action="" method="post" class="f1">
+
+                    		<h3>Register To Our Service</h3>
+                    		<p>Fill in the form to get Service</p>
+                    		<div class="f1-steps">
+                    			<div class="f1-progress">
+                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
+                    			</div>
+                    			<div class="f1-step active">
+                    				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
+                    				<p>info</p>
+                    			</div>
+                    			<div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-key"></i></div>
+                    				<p>service</p>
+                    			</div>
+                    		    <div class="f1-step">
+                    				<div class="f1-step-icon"><i class="fa fa-twitter"></i></div>
+                    				<p>confirm</p>
+                    			</div>
+
+                    		</div>
+                    		
+                    		<fieldset>
+                    		    <h4>Tell us your info:</h4>
+                    			<div class="form-group">
+                    			    <label class="sr-only" for="f1-full-name">Full name</label>
+                                    <input type="text" name="f1-full-name" placeholder="Full name..." class="f1-full-name form-control" id="f1-full-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-phone-number">Phone number</label>
+                                    <input type="text" name="f1-phone-number" placeholder="Phone number..." class="f1-phone-number form-control" id="f1-phone-number">
+                                </div>
+                                <div class="form-group" >
+                                    <label class="sr-only" for="f1-addresse">Address</label>
+                                    <input type="text" name="f1-address" placeholder="Address..." class="f1-address form-control" id="f1-address">
+                                
+                                </div>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-next">Next</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <h4>How many sneakers you want to use our Service:</h4>
+                                <div class="form-group">
+                                    <label class="sr-only" for="f1-quantity">Quantity</label>
+                                    <input type="text" name="f1-quantity" placeholder="Quantity..." class="f1-quantity form-control" id="f1-quantity">
+                                </div>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous">Previous</button>
+                                    <button type="button" class="btn btn-next-account">Next</button>
+                                </div>
+                            </fieldset>
+                             
+                            <fieldset>
+                                <datalist id='suggest'></datalist>
+                                <div style="width:510px; height: 270px; overflow: hidden;">
+                                    <div id="snkrs" style="width: 5100px; height: 270px;  position: relative;z-index:0; ">
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previous-nor" id="pre-nor">Previous</button>
+                                    <button type="button" class="btn btn-previous-service" id="pre-ser">Previous</button>
+                                    <button type="submit" class="btn btn-next-service" id="next-ser">Next</button>
+                                    <button type="submit" class="btn btn-next-service-nor" id="next-nor">Next</button>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <h4>Choose our shipping Service:</h4>
+                                <div class="form-group">
+                                    <h1>Trigonic has two Service about shipping:</h1>
+                                </div>
+                                <div class="form-group">
+                                    <label class='sr-only' for='f1-shipping-service'>Shipping service</label>   
+                                    <input type='checkbox' name='f1-pick-up'  id="f1-pick-up" style="margin-left: 50px; " /> PickUp
+                                    <input type='checkbox' name='f1-release'  id="f1-release" style="margin-left: 250px;" /> Release
+                                    <div id="shipping-fee" style="width: 510px;">
+                                        <h3 style='margin-left:260px;'>Shipping Fee: <span id="fee"></span></h3>
+                                    </div>
+                                </div>
+                                
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previously">Previous</button>
+                                    <button type="submit" class="btn btn-next-shipping">Next</button>
+                                </div>
+                            </fieldset>   
+                            <fieldset>
+                                <div class="form-group">
+                                    <h4>View your cart:</h4>
+                                </div>
+                                <p style="margin-left: 20px; width: 470px; height: 100px;">
+                                    <span style="margin-left: 185px; font-size: 20px; font-weight: 300; color: #555;line-height: 30px;">YOUR INFO</span>
+                                <legend style="border-bottom: 1px solid #7B0D1E;"></legend>
+                                    <span>Full name:</span><span id="txtFullName" style="float:right;"></span></br>
+                                    <span>Phone number:</span><span id="txtPhoneNumber" style="float:right;"></span></br>
+                                    <span>Address:</span><span id="txtAddress" style="float:right;"></span></br>
+                            </p></br>
+                            </br>
+                                <p style="margin-left: 20px; width: 470px; height: 100%;">
+                                    <span style="margin-left: 160px; font-size: 20px; font-weight: 300; color: #555;line-height: 30px;">YOUR SERVICES</span>
+                                    <legend style="border-bottom: 1px solid #7B0D1E;"></legend>
+                                    <span>Quantity Sneakers:</span><span id="txtQuantity" style="float:right;"></span></br>
+                                    <span id="list-service">
+                                        
+                                    </span>
+                                </p>
+                                
+                                <p style="margin-left: 20px; width: 470px; height: 100px;">
+                                    <span style="margin-left: 185px; font-size: 20px; font-weight: 300; color: #555;line-height: 30px;">SHIPPING</span>
+                                <legend style="border-bottom: 1px solid #7B0D1E;"></legend>
+                                    <span>PickUp: </span><span id="txtPickUp" style="float:right;"></span></br>
+                                    <span>Release: </span><span id="txtRelease" style="float:right;"></span></br>
+                                    
+                            </p></br>
+                                <p style="margin-left: 20px; width: 470px; height: 100px;">
+                                    <span style="margin-left: 195px; font-size: 20px; font-weight: 300; color: #555;line-height: 30px;">TOTAL</span>
+                                <legend style="border-bottom: 1px solid #7B0D1E;"></legend>
+                                    <span>Service price: </span><span id="txtServicePrice" style="float:right;"></span></br>
+                                    <span>Shipping fee: </span><span id="txtShippingFee" style="float:right;"></span></br>
+                                    <span>Total : </span><span id="txtTotal" style="float:right;"></span></br>
+                                    
+                            </p></br>
+                            </br>
+                                <div class="f1-buttons">
+                                    <button type="button" class="btn btn-previously">Previous</button>
+                                    <button type="submit" class="btn btn-submit">Confirm</button>
+                                </div>
+                            </fieldset>
+                    	
+                        </form>
+                        
+
+                    </div>
+                </div>
+                    
+                <!-- Modal -->
+
+                <div class="modal fade" id="trigonicModal" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title" id="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p id="modal-desc">This is a small modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- End Modal -->
+
+
+            </div>
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/retina-1.1.0.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
+        <!--<script src="js/firebase-config.js"></script>-->
+        <script src="js/scripts.js"></script>
+        <script>
+            var config = {
+    apiKey: "AIzaSyA3uKbxPyeGSxpDOUH6bkS_L8wFgdEqrLw",
+    authDomain: "trigonic-a4354.firebaseapp.com",
+    databaseURL: "https://trigonic-a4354.firebaseio.com",
+    projectId: "trigonic-a4354",
+    storageBucket: "trigonic-a4354.appspot.com",
+    messagingSenderId: "403029019752"
+};
+firebase.initializeApp(config);
+var firestore = firebase.firestore();
+
+
+const settings = { timestampsInSnapshots: true };
+firestore.settings(settings);
+
+            const listSuggest = document.querySelector("#suggest");
+            firestore.collection("suggest").get().then((snapshot) => {
+               snapshot.docs.forEach(doc => {
+                   listSuggest.innerHTML += "<option value='" + doc.data().nameSneaker + "'>";
+               }) 
+            });
+            
+        </script>
+        
+        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/bday-picker.js"></script>
+   
+    </body>
+
+</html>
